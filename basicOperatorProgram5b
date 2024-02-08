@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    // Variable for user input
+    int num, sum = 0;
+
+    // Prompt the user to enter a number
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    // Check if the number is a Perfect number
+    for (int i = 1; i <= num / 2; i++) {
+        if (num % i == 0) {
+            sum += i;
+        }
+    }
+
+    // Display the result
+    if (sum == num) {
+        printf("%d is a Perfect number.\n", num);
+    } else {
+        printf("%d is not a Perfect number.\n", num);
+    }
+
+    // Return 0 to indicate successful execution
+    return 0;
+}
