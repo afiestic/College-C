@@ -1,24 +1,5 @@
 #include <stdio.h>
 
-// Function to check if a number is prime
-int isPrime(int num)
-{
-    if (num <= 1)
-    {
-        return 0; // Not prime
-    }
-
-    for (int i = 2; i * i <= num; i++)
-    {
-        if (num % i == 0)
-        {
-            return 0; // Not prime
-        }
-    }
-
-    return 1; // Prime
-}
-
 int main()
 {
     // Variable for user input
@@ -30,9 +11,28 @@ int main()
 
     // Check and generate prime numbers up to n
     printf("Prime numbers up to %d: ", n);
+
     for (int i = 2; i <= n; i++)
     {
-        if (isPrime(i))
+        int isPrime = 1; // Assume i is prime
+
+        if (i <= 1)
+        {
+            isPrime = 0; // Not prime
+        }
+        else
+        {
+            for (int j = 2; j * j <= i; j++)
+            {
+                if (i % j == 0)
+                {
+                    isPrime = 0; // Not prime
+                    break;
+                }
+            }
+        }
+
+        if (isPrime)
         {
             printf("%d ", i);
         }
