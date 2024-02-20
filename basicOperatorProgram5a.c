@@ -2,7 +2,7 @@
 
 int main()
 {
-    // Variables for geometric objects
+    // Variables for geometric objects 
     float length, width, radius, height;
     float areaRectangle, perimeterRectangle, areaCircle, circumferenceCircle, volumeCube;
 
